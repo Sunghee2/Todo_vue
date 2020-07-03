@@ -22,6 +22,6 @@ npm run build
 `views` : 각 화면의 컴포넌트
 
 
-- @Decorator
+- @Watch()
 
-  - 
+  괄호 내의 변수가 변경될 때마다 해당 함수 실행
