@@ -1,22 +1,31 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <children @counter="counter"></children>
+    <h1>약관</h1>
+    <p>이곳에는 동의를 필요하는 어떠한 약관 내용이 들어갑니다.</p>
+    <my-check-box v-model="checked" @change="change"></my-check-box>
+    {{text}}
   </div>
 </template>
 
 <script lang="ts">
 // @ is an alias to /src
 import {Component, Vue, Provide} from 'vue-property-decorator';
-import children from '@/components/children.vue';
+import myCheckBox from '@/components/my-checkbox.vue';
 
 @Component({
   components: {
-    children,
+    myCheckBox,
   },
 })
 
 export default class Home extends Vue {
-  @Provide('message') msg: string = 'provide/inject example';
+  checked: boolean = false;
+  text: string = '동의하지 않습니다.';
+
+  change(checked: boolean) {
+    this.checked = checked;
+    this.text = checked? '동의합니다.' : '동의하지 않습니다.';
+  }
 }
 </script>
