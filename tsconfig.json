@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    // undefined 허용 X
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -27,7 +26,6 @@
       "scripthost"
     ]
   },
-//  path밑에 있는 파일을 자바스크립트로 빌드하게됨
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
